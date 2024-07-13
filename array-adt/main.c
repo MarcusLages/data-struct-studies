@@ -42,7 +42,7 @@ int main (int argc, char *argv[]) {
     // add(&arr, 4);
     // display(arr);
 
-    insert(&arr, 0, 7);
+    insert(&arr, 10, 7);
     insert(&arr, 0, 7);
     insert(&arr, 0, 7);
     display(arr);

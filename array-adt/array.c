@@ -19,6 +19,11 @@ void add(Array * pArr, int num) {
 }
 
 void insert(Array * pArr, int index, int num) {
+    if (index >= pArr->length) {
+        fprintf(stderr, "This index is not valid.\n", 25);
+        return;
+    }
+
     if (pArr->length == pArr->size)
         increaseSize(pArr, 2);
     
