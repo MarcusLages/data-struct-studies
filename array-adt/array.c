@@ -19,7 +19,7 @@ void add(Array * pArr, int num) {
 }
 
 void insert(Array * pArr, int index, int num) {
-    if (index >= pArr->length) {
+    if (index >= pArr->length && index < 0) {
         fprintf(stderr, "This index is not valid.\n", 25);
         return;
     }
