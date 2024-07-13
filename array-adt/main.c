@@ -30,7 +30,16 @@ void inputArray(Array * arr) {
 int main (int argc, char *argv[]) {
     Array arr;
 
-    inputArray(&arr);
+    // inputArray(&arr);
+    arr.size = 3;
+    arr.length = 3;
+    arr.A = (int *) malloc(arr.size * sizeof(int));
+    arr.A[0] = 1;
+    arr.A[1] = 2;
+    arr.A[2] = 3;
+    display(arr);
+    
+    add(&arr, 4);
     display(arr);
 
     return 0;

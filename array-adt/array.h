@@ -10,5 +10,7 @@ struct Array {
 };
 
 void display(Array arr);
+void add(Array * arr, int num);
+void increaseSize(Array * arr, int increase);
 
 #endif //ARRAY_C_
