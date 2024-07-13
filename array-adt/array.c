@@ -14,26 +14,46 @@ void add(Array * pArr, int num) {
     if (pArr->length == pArr->size)
         increaseSize(pArr, 2);
 
+    pArr->A[pArr->length] = num;
     pArr->length++;
-    pArr->A[pArr->length - 1] = num;
 }
 
 void insert(Array * pArr, int index, int num) {
-    if (index >= pArr->length && index < 0) {
-        fprintf(stderr, "This index is not valid.\n", 25);
+    if (index >= pArr->length || index < 0) {
+        fprintf(stderr, "------------\n| ERROR: This index is not valid.\n------------\n", 52);
         return;
     }
 
     if (pArr->length == pArr->size)
         increaseSize(pArr, 2);
     
-    pArr->length++;
-    for(int i = pArr->length - 2; i >= index; i--)
+    for(int i = pArr->length - 1; i >= index; i--)
         pArr->A[i + 1] = pArr->A[i];
     pArr->A[index] = num;
+    pArr->length++;
+}
+
+int delete(Array * pArr, int index) {
+    if (index >= pArr->length || index < 0) {
+        fprintf(stderr, "------------\n| ERROR: This index is not valid.\n------------\n", 52);
+        return 0;
+    }
+
+    int x = pArr->A[index];
+    for(int i = index; i < pArr->length - 1; i++) {
+        pArr->A[i] = pArr->A[i + 1];
+    }
+    
+    pArr->length--;
+
+    return x;
 }
 
 void increaseSize(Array * pArr, int increase) {
     pArr->size += increase;
     pArr->A = realloc(pArr->A, pArr->size * sizeof(int));
+}
+
+int search(Array * pArr, ) {
+
 }

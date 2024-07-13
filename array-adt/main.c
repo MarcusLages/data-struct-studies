@@ -47,5 +47,9 @@ int main (int argc, char *argv[]) {
     insert(&arr, 0, 7);
     display(arr);
 
+    int x = delete(&arr, 0);
+    x = delete(&arr, 10);
+    display(arr);
+
     return 0;
 }
