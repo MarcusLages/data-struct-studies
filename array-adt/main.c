@@ -39,7 +39,12 @@ int main (int argc, char *argv[]) {
     arr.A[2] = 3;
     display(arr);
     
-    add(&arr, 4);
+    // add(&arr, 4);
+    // display(arr);
+
+    insert(&arr, 0, 7);
+    insert(&arr, 0, 7);
+    insert(&arr, 0, 7);
     display(arr);
 
     return 0;

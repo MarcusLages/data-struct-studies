@@ -10,18 +10,25 @@ void display(Array arr) {
     printf("\n");
 }
 
-void add(Array * arr, int num) {
-    if (arr->length < arr->size) {
-        arr->length++;
-        arr->A[arr->length - 1] = num;
-    } else {
-        increaseSize(arr, 2);
-        arr->length++;
-        arr->A[arr->length - 1] = num;
-    }
+void add(Array * pArr, int num) {
+    if (pArr->length == pArr->size)
+        increaseSize(pArr, 2);
+
+    pArr->length++;
+    pArr->A[pArr->length - 1] = num;
 }
 
-void increaseSize(Array * arr, int increase) {
-    arr->size += increase;
-    arr = realloc(arr->A, arr->size * sizeof(int));
+void insert(Array * pArr, int index, int num) {
+    if (pArr->length == pArr->size)
+        increaseSize(pArr, 2);
+    
+    pArr->length++;
+    for(int i = pArr->length - 2; i >= index; i--)
+        pArr->A[i + 1] = pArr->A[i];
+    pArr->A[index] = num;
+}
+
+void increaseSize(Array * pArr, int increase) {
+    pArr->size += increase;
+    pArr->A = realloc(pArr->A, pArr->size * sizeof(int));
 }
