@@ -72,7 +72,10 @@ int main (int argc, char *argv[]) {
     // printf("\n12 is in index: %d\n", recursiveBinarySearch(&arr, 0, arr.length, 12));
     // display(arr);
 
-    printf("Element at index 3: %d", get(arr, 3));
+    // printf("Element at index 3: %d", get(arr, 3));
+
+    set(&arr, 2, 13);
+    display(arr);
 
     return 0;
 }

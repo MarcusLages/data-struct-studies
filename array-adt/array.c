@@ -20,6 +20,15 @@ int get(Array arr, int index) {
     return arr.A[index];
 }
 
+void set(Array * pArr, int index, int num) {
+    if (index >= pArr->length || index < 0) {
+        fprintf(stderr, "------------\n| ERROR: This index is not valid.\n------------\n", 52);
+        return;
+    } 
+
+    pArr->A[index] = num;
+}
+
 void add(Array * pArr, int num) {
     if (pArr->length == pArr->size)
         increaseSize(pArr, 2);

@@ -11,6 +11,7 @@ struct Array {
 
 void display(Array arr);
 int get(Array arr, int index);
+void set(Array * pArr, int index, int num);
 void add(Array * pArr, int num);
 void insert(Array * pArr, int index, int num);
 int delete(Array * pArr, int index);
