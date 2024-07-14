@@ -62,3 +62,17 @@ int linearSearch(Array * pArr, int num) {
             
     return -1;
 }
+
+int transposedLinearSearch(Array * pArr, int num) {
+    for (int i = 0; i < pArr->length; i++)
+        if(pArr->A[i] == num) {
+            if (i > 0) {
+                int temp = pArr->A[i];
+                pArr->A[i] = pArr->A[i - 1]; 
+                pArr->A[i - 1] = temp;
+            }
+            return i;
+        }
+            
+    return -1;
+}
