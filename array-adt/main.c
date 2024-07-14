@@ -74,8 +74,10 @@ int main (int argc, char *argv[]) {
 
     // printf("Element at index 3: %d", get(arr, 3));
 
-    set(&arr, 2, 13);
-    display(arr);
+    // set(&arr, 2, 13);
+    // display(arr);
+
+    printf("The average of the items in the array is: %.2lf", avg(arr));
 
     return 0;
 }

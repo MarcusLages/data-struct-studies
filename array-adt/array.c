@@ -68,6 +68,16 @@ int delete(Array * pArr, int index) {
     return element;
 }
 
+double avg(Array arr) {
+    int sum = 0;
+
+    for(int i = 0; i < arr.length; i++) {
+        sum += arr.A[i];
+    }
+
+    return (double) sum / arr.length;
+}
+
 void increaseSize(Array * pArr, int increase) {
     pArr->size += increase;
     pArr->A = realloc(pArr->A, pArr->size * sizeof(int));
