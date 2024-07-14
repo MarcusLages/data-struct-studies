@@ -77,7 +77,8 @@ int main (int argc, char *argv[]) {
     // set(&arr, 2, 13);
     // display(arr);
 
-    printf("The average of the items in the array is: %.2lf", avg(arr));
+    // printf("The average of the items in the array is: %.2lf", avg(arr));
+    printf("The max of the items in the array is: %d", max(arr));
 
     return 0;
 }

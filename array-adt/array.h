@@ -16,6 +16,7 @@ void add(Array * pArr, int num);
 void insert(Array * pArr, int index, int num);
 int delete(Array * pArr, int index);
 double avg(Array arr);
+int max(Array arr);
 void increaseSize(Array * pArr, int increase);
 int linearSearch(Array arr, int num);
 int transposedLinearSearch(Array * pArr, int num);

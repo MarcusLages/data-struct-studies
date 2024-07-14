@@ -78,6 +78,17 @@ double avg(Array arr) {
     return (double) sum / arr.length;
 }
 
+int max(Array arr) {
+    int max = arr.A[0];
+
+    for(int i = 0; i < arr.length; i++) {
+        if (arr.A[i] > max)
+            max = arr.A[i];
+    }
+
+    return max;
+}
+
 void increaseSize(Array * pArr, int increase) {
     pArr->size += increase;
     pArr->A = realloc(pArr->A, pArr->size * sizeof(int));
