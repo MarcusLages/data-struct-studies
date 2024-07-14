@@ -39,14 +39,14 @@ int delete(Array * pArr, int index) {
         return 0;
     }
 
-    int x = pArr->A[index];
+    int element = pArr->A[index];
     for(int i = index; i < pArr->length - 1; i++) {
         pArr->A[i] = pArr->A[i + 1];
     }
     
     pArr->length--;
 
-    return x;
+    return element;
 }
 
 void increaseSize(Array * pArr, int increase) {
@@ -54,6 +54,11 @@ void increaseSize(Array * pArr, int increase) {
     pArr->A = realloc(pArr->A, pArr->size * sizeof(int));
 }
 
-int search(Array * pArr, ) {
-
+// Only for one element
+int linearSearch(Array * pArr, int num) {
+    for (int i = 0; i < pArr->length; i++)
+        if(pArr->A[i] == num)
+            return i;
+            
+    return -1;
 }

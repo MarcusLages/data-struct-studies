@@ -51,5 +51,7 @@ int main (int argc, char *argv[]) {
     x = delete(&arr, 10);
     display(arr);
 
+    printf("7 is in index: %d", linearSearch(&arr, 7));
+
     return 0;
 }
