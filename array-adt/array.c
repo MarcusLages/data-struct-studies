@@ -65,9 +65,9 @@ void increaseSize(Array * pArr, int increase) {
 }
 
 // Only for one element
-int linearSearch(Array * pArr, int num) {
-    for (int i = 0; i < pArr->length; i++)
-        if(pArr->A[i] == num)
+int linearSearch(Array arr, int num) {
+    for (int i = 0; i < arr.length; i++)
+        if(arr.A[i] == num)
             return i;
             
     return -1;
@@ -106,16 +106,16 @@ int headLinearSearch(Array * pArr, int num) {
 }
 
 // only for sorted lists
-int binarySearch(Array * pArr, int num) {
+int binarySearch(Array arr, int num) {
     int low, high, mid;
     low = 0;
-    high = pArr->length;
+    high = arr.length;
 
     while (low <= high) {
         mid = (int) ceil((double) (high + low) / 2);
-        if (num == pArr->A[mid])
+        if (num == arr.A[mid])
             return mid;
-        else if (num < pArr->A[mid])
+        else if (num < arr.A[mid])
             high = mid - 1;
         else
             low = mid + 1;
@@ -125,15 +125,15 @@ int binarySearch(Array * pArr, int num) {
 }
 
 // recursive version of binary search
-int recursiveBinarySearch(Array * pArr, int low, int high, int num) {
+int recursiveBinarySearch(Array arr, int low, int high, int num) {
     if (low <= high) {
         int mid = (int) ceil((double) (high + low) / 2);
-        if (num == pArr->A[mid])
+        if (num == arr.A[mid])
             return mid;
-        else if (num < pArr->A[mid])
-            recursiveBinarySearch(pArr, low, mid - 1, num);
+        else if (num < arr.A[mid])
+            recursiveBinarySearch(arr, low, mid - 1, num);
         else
-            recursiveBinarySearch(pArr, mid + 1, high, num);
+            recursiveBinarySearch(arr, mid + 1, high, num);
     } else    
         return -1;
 }

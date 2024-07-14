@@ -15,10 +15,10 @@ void add(Array * pArr, int num);
 void insert(Array * pArr, int index, int num);
 int delete(Array * pArr, int index);
 void increaseSize(Array * pArr, int increase);
-int linearSearch(Array * pArr, int num);
+int linearSearch(Array arr, int num);
 int transposedLinearSearch(Array * pArr, int num);
 int headLinearSearch(Array * pArr, int num);
-int binarySearch(Array * pArr, int num);
-int recursiveBinarySearch(Array * pArr, int low, int high, int num);
+int binarySearch(Array arr, int num);
+int recursiveBinarySearch(Array arr, int low, int high, int num);
 
 #endif //ARRAY_C_
