@@ -114,3 +114,17 @@ int binarySearch(Array * pArr, int num) {
             
     return -1;
 }
+
+// recursive version of binary search
+int recursiveBinarySearch(Array * pArr, int low, int high, int num) {
+    if (low <= high) {
+        int mid = (int) ceil((double) (high + low) / 2);
+        if (num == pArr->A[mid])
+            return mid;
+        else if (num < pArr->A[mid])
+            recursiveBinarySearch(pArr, low, mid - 1, num);
+        else
+            recursiveBinarySearch(pArr, mid + 1, high, num);
+    } else    
+        return -1;
+}

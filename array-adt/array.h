@@ -18,5 +18,6 @@ int linearSearch(Array * pArr, int num);
 int transposedLinearSearch(Array * pArr, int num);
 int headLinearSearch(Array * pArr, int num);
 int binarySearch(Array * pArr, int num);
+int recursiveBinarySearch(Array * pArr, int low, int high, int num);
 
 #endif //ARRAY_C_

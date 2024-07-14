@@ -66,5 +66,11 @@ int main (int argc, char *argv[]) {
     printf("\n5 is in index: %d\n", binarySearch(&arr, 5));
     display(arr);
     
+    printf("\n2 is in index: %d\n", recursiveBinarySearch(&arr, 0, arr.length, 2));
+    display(arr);
+
+    printf("\n12 is in index: %d\n", recursiveBinarySearch(&arr, 0, arr.length, 12));
+    display(arr);
+
     return 0;
 }
