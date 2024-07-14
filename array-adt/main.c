@@ -31,34 +31,40 @@ int main (int argc, char *argv[]) {
     Array arr;
 
     // inputArray(&arr);
-    arr.size = 3;
-    arr.length = 3;
+    arr.size = 6;
+    arr.length = 6;
     arr.A = (int *) malloc(arr.size * sizeof(int));
     arr.A[0] = 1;
     arr.A[1] = 2;
     arr.A[2] = 3;
+    arr.A[3] = 4;
+    arr.A[4] = 5;
+    arr.A[5] = 6;
     display(arr);
     
     // add(&arr, 4);
     // display(arr);
 
-    insert(&arr, 10, 7);
-    insert(&arr, 0, 7);
-    insert(&arr, 0, 7);
-    display(arr);
+    // insert(&arr, 10, 7);
+    // insert(&arr, 0, 7);
+    // insert(&arr, 0, 7);
+    // display(arr);
 
-    int x = delete(&arr, 0);
-    x = delete(&arr, 10);
-    display(arr);
+    // int x = delete(&arr, 0);
+    // x = delete(&arr, 10);
+    // display(arr);
 
     printf("\n3 is in index: %d\n", linearSearch(&arr, 3));
     display(arr);
 
-    printf("\n3 is in index: %d\n", transposedLinearSearch(&arr, 3));
-    display(arr);
+    // printf("\n3 is in index: %d\n", transposedLinearSearch(&arr, 3));
+    // display(arr);
 
-    printf("\n3 is in index: %d\n", headLinearSearch(&arr, 3));
-    display(arr);
+    // printf("\n3 is in index: %d\n", headLinearSearch(&arr, 3));
+    // display(arr);
 
+    printf("\n5 is in index: %d\n", binarySearch(&arr, 5));
+    display(arr);
+    
     return 0;
 }
