@@ -63,6 +63,7 @@ int linearSearch(Array * pArr, int num) {
     return -1;
 }
 
+// switches the found item with the previous one to reduce search
 int transposedLinearSearch(Array * pArr, int num) {
     for (int i = 0; i < pArr->length; i++)
         if(pArr->A[i] == num) {
@@ -70,6 +71,21 @@ int transposedLinearSearch(Array * pArr, int num) {
                 int temp = pArr->A[i];
                 pArr->A[i] = pArr->A[i - 1]; 
                 pArr->A[i - 1] = temp;
+            }
+            return i;
+        }
+            
+    return -1;
+}
+
+// switches the found item with the first one to reduce search
+int headLinearSearch(Array * pArr, int num) {
+    for (int i = 0; i < pArr->length; i++)
+        if(pArr->A[i] == num) {
+            if (i > 0) {
+                int temp = pArr->A[i];
+                pArr->A[i] = pArr->A[0]; 
+                pArr->A[0] = temp;
             }
             return i;
         }

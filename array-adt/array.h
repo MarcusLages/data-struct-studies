@@ -16,5 +16,6 @@ int delete(Array * pArr, int index);
 void increaseSize(Array * pArr, int increase);
 int linearSearch(Array * pArr, int num);
 int transposedLinearSearch(Array * pArr, int num);
+int headLinearSearch(Array * pArr, int num);
 
 #endif //ARRAY_C_

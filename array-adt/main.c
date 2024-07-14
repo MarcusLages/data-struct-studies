@@ -57,5 +57,8 @@ int main (int argc, char *argv[]) {
     printf("\n3 is in index: %d\n", transposedLinearSearch(&arr, 3));
     display(arr);
 
+    printf("\n3 is in index: %d\n", headLinearSearch(&arr, 3));
+    display(arr);
+
     return 0;
 }
