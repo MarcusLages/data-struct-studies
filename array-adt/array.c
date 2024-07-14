@@ -11,6 +11,15 @@ void display(Array arr) {
     printf("\n");
 }
 
+int get(Array arr, int index) {
+    if (index >= arr.length || index < 0) {
+        fprintf(stderr, "------------\n| ERROR: This index is not valid.\n------------\n", 52);
+        return -1;
+    }
+
+    return arr.A[index];
+}
+
 void add(Array * pArr, int num) {
     if (pArr->length == pArr->size)
         increaseSize(pArr, 2);

@@ -54,8 +54,8 @@ int main (int argc, char *argv[]) {
     // x = delete(&arr, 10);
     // display(arr);
 
-    printf("\n3 is in index: %d\n", linearSearch(&arr, 3));
-    display(arr);
+    // printf("\n3 is in index: %d\n", linearSearch(&arr, 3));
+    // display(arr);
 
     // printf("\n3 is in index: %d\n", transposedLinearSearch(&arr, 3));
     // display(arr);
@@ -63,14 +63,16 @@ int main (int argc, char *argv[]) {
     // printf("\n3 is in index: %d\n", headLinearSearch(&arr, 3));
     // display(arr);
 
-    printf("\n5 is in index: %d\n", binarySearch(&arr, 5));
-    display(arr);
+    // printf("\n5 is in index: %d\n", binarySearch(&arr, 5));
+    // display(arr);
     
-    printf("\n2 is in index: %d\n", recursiveBinarySearch(&arr, 0, arr.length, 2));
-    display(arr);
+    // printf("\n2 is in index: %d\n", recursiveBinarySearch(&arr, 0, arr.length, 2));
+    // display(arr);
 
-    printf("\n12 is in index: %d\n", recursiveBinarySearch(&arr, 0, arr.length, 12));
-    display(arr);
+    // printf("\n12 is in index: %d\n", recursiveBinarySearch(&arr, 0, arr.length, 12));
+    // display(arr);
+
+    printf("Element at index 3: %d", get(&arr, 3));
 
     return 0;
 }
