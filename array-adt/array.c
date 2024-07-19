@@ -167,3 +167,22 @@ int recursiveBinarySearch(Array arr, int low, int high, int num) {
     } else    
         return -1;
 }
+
+void reverseCopy(Array * pArr) {
+    int * copy;
+    int i, j;
+    copy = (int *) malloc(pArr->length * sizeof(int));
+
+    for(i = 0, j = pArr->length - 1; i < pArr->length; i++, j--) {
+        copy[i] = pArr->A[j];
+    }
+
+    for(i = 0; i < pArr->length; i++) {
+        pArr->A[i] = copy[i];
+    }
+}
+void reverseSub(Array * pArr);
+void leftShift(Array * pArr, int steps);
+void leftRotation(Array * pArr, int steps);
+void rightShift(Array * pArr, int steps);
+void rightRotation(Array * pArr, int steps);
