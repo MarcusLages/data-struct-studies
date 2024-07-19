@@ -23,6 +23,7 @@ int transposedLinearSearch(Array * pArr, int num);
 int headLinearSearch(Array * pArr, int num);
 int binarySearch(Array arr, int num);
 int recursiveBinarySearch(Array arr, int low, int high, int num);
+Array subArray(Array arr, int start, int finish);
 void reverseCopy(Array * pArr);
 void reverseSub(Array * pArr);
 void leftShift(Array * pArr, int steps);

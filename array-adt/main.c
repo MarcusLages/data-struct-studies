@@ -84,8 +84,11 @@ int main (int argc, char *argv[]) {
     reverseSub(&arr);
     display(arr);
 
-    leftShift(&arr, 3);
-    display(arr);
+    // leftShift(&arr, 3);
+    // display(arr);
+
+    Array sub = subArray(arr, 2, 40);
+    display(sub);
 
     return 0;
 }

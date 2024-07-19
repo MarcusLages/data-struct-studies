@@ -181,6 +181,29 @@ int recursiveBinarySearch(Array arr, int low, int high, int num) {
         return -1;
 }
 
+// Creates a sub array
+Array subArray(Array arr, int start, int finish) {
+    if (start < 0 ||
+        start >= arr.length ||
+        finish >= arr.length ||
+        start > finish) {
+        printf("\nSub array could not be created.\n");
+        Array nullArr = {NULL, 0, 0};
+        return nullArr;
+    }
+
+    Array subArr;
+    subArr.length = finish - start + 1;
+    subArr.size = subArr.length;
+    subArr.A = (int *) malloc(subArr.size * sizeof(int));
+
+    for(int i = start, sub = 0; i <= finish; i++, sub++) {
+        subArr.A[sub] = arr.A[i];
+    }
+
+    return subArr;
+}
+
 // Reverses the array through an array copy
 // O(2n)
 void reverseCopy(Array * pArr) {
