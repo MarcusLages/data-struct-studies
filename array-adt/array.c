@@ -128,6 +128,60 @@ void increaseSize(Array * pArr, int increase) {
     pArr->A = realloc(pArr->A, pArr->size * sizeof(int));
 }
 
+// Reverses the array through an array copy
+// O(2n)
+void reverseCopy(Array * pArr) {
+    int * copy;
+    int i, j;
+    copy = (int *) malloc(pArr->length * sizeof(int));
+
+    for(i = 0, j = pArr->length - 1; i < pArr->length; i++, j--) {
+        copy[i] = pArr->A[j];
+    }
+
+    for(i = 0; i < pArr->length; i++) {
+        pArr->A[i] = copy[i];
+    }
+}
+
+// Reverses the array through array substitution
+// O(log[2]n)
+void reverseSub(Array * pArr) {
+    int i, j;
+
+    for(i = 0, j = pArr->length - 1; i < j; i++, j--) {
+        swap(&pArr->A[i], &pArr->A[j]);
+    }
+}
+
+void leftShift(Array * pArr, int steps) {
+    if(steps <= 0) return;
+    for(int i = 0; i < pArr->length; i++) {
+        if(i + steps >= pArr->length) {
+            pArr->A[i] = 0;
+        } else {
+            pArr->A[i] = pArr->A[i + steps];
+        }
+    }
+}
+
+void leftRotation(Array * pArr, int steps) {
+    if(steps <= 0 || steps % pArr->length == 0) return;
+
+    Array copy = subArray(*pArr, 0, steps - 1);
+    display(copy);
+    leftShift(pArr, steps);
+
+    for(int i = pArr->length - steps, j = 0; j < steps; i++, j++) {
+        pArr->A[i] = copy.A[j];
+    }
+
+    free(copy.A);
+    copy.A = NULL;
+    copy.length = 0;
+    copy.size = 0;
+}
+
 bool isSorted(Array arr) {
     if(arr.length == 0)
         return true;
@@ -234,60 +288,6 @@ Array subArray(Array arr, int start, int finish) {
     }
 
     return subArr;
-}
-
-// Reverses the array through an array copy
-// O(2n)
-void reverseCopy(Array * pArr) {
-    int * copy;
-    int i, j;
-    copy = (int *) malloc(pArr->length * sizeof(int));
-
-    for(i = 0, j = pArr->length - 1; i < pArr->length; i++, j--) {
-        copy[i] = pArr->A[j];
-    }
-
-    for(i = 0; i < pArr->length; i++) {
-        pArr->A[i] = copy[i];
-    }
-}
-
-// Reverses the array through array substitution
-// O(log[2]n)
-void reverseSub(Array * pArr) {
-    int i, j;
-
-    for(i = 0, j = pArr->length - 1; i < j; i++, j--) {
-        swap(&pArr->A[i], &pArr->A[j]);
-    }
-}
-
-void leftShift(Array * pArr, int steps) {
-    if(steps <= 0) return;
-    for(int i = 0; i < pArr->length; i++) {
-        if(i + steps >= pArr->length) {
-            pArr->A[i] = 0;
-        } else {
-            pArr->A[i] = pArr->A[i + steps];
-        }
-    }
-}
-
-void leftRotation(Array * pArr, int steps) {
-    if(steps <= 0 || steps % pArr->length == 0) return;
-
-    Array copy = subArray(*pArr, 0, steps - 1);
-    display(copy);
-    leftShift(pArr, steps);
-
-    for(int i = pArr->length - steps, j = 0; j < steps; i++, j++) {
-        pArr->A[i] = copy.A[j];
-    }
-
-    free(copy.A);
-    copy.A = NULL;
-    copy.length = 0;
-    copy.size = 0;
 }
 
 void rightShift(Array * pArr, int steps);
