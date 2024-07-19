@@ -109,9 +109,13 @@ void increaseSize(Array * pArr, int increase) {
 }
 
 bool isSorted(Array arr) {
-    for(int i = 0; i < arr.length; i++)
+    if(arr.length == 0)
+        return true;
+
+    for(int i = 0; i < arr.length - 1; i++)
         if(arr.A[i] > arr.A[i + 1])
             return false;
+
     return true;
 }
 
