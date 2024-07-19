@@ -84,5 +84,8 @@ int main (int argc, char *argv[]) {
     reverseSub(&arr);
     display(arr);
 
+    leftShift(&arr, 3);
+    display(arr);
+
     return 0;
 }

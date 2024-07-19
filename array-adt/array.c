@@ -202,7 +202,16 @@ void reverseSub(Array * pArr) {
     }
 }
 
-void leftShift(Array * pArr, int steps);
+void leftShift(Array * pArr, int steps) {
+    for(int i = 0; i < pArr->length; i++) {
+        if(i + steps >= pArr->length) {
+            pArr->A[i] = 0;
+        } else {
+            pArr->A[i] = pArr->A[i + steps];
+        }
+    }
+}
+
 void leftRotation(Array * pArr, int steps);
 void rightShift(Array * pArr, int steps);
 void rightRotation(Array * pArr, int steps);
