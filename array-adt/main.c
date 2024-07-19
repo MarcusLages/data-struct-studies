@@ -80,7 +80,8 @@ int main (int argc, char *argv[]) {
     // printf("The average of the items in the array is: %.2lf", avg(arr));
     // printf("The max of the items in the array is: %d", max(arr));
 
-    reverseCopy(&arr);
+    // reverseCopy(&arr);
+    reverseSub(&arr);
     display(arr);
 
     return 0;

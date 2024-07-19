@@ -168,6 +168,8 @@ int recursiveBinarySearch(Array arr, int low, int high, int num) {
         return -1;
 }
 
+// Reverses the array through an array copy
+// O(2n)
 void reverseCopy(Array * pArr) {
     int * copy;
     int i, j;
@@ -181,7 +183,19 @@ void reverseCopy(Array * pArr) {
         pArr->A[i] = copy[i];
     }
 }
-void reverseSub(Array * pArr);
+
+// Reverses the array through array substitution
+// O(log[2]n)
+void reverseSub(Array * pArr) {
+    int i, j, temp;
+
+    for(i = 0, j = pArr->length - 1; i < j; i++, j--) {
+        temp = pArr->A[i];
+        pArr->A[i] = pArr->A[j];
+        pArr->A[j] = temp;
+    }
+}
+
 void leftShift(Array * pArr, int steps);
 void leftRotation(Array * pArr, int steps);
 void rightShift(Array * pArr, int steps);
