@@ -87,8 +87,11 @@ int main (int argc, char *argv[]) {
     // leftShift(&arr, 3);
     // display(arr);
 
-    Array sub = subArray(arr, 2, 40);
-    display(sub);
+    // Array sub = subArray(arr, 2, 40);
+    // display(sub);
+
+    leftRotation(&arr, 5);
+    display(arr);
 
     return 0;
 }

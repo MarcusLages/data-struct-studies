@@ -241,6 +241,22 @@ void leftShift(Array * pArr, int steps) {
     }
 }
 
-void leftRotation(Array * pArr, int steps);
+void leftRotation(Array * pArr, int steps) {
+    if(steps <= 0 || steps % pArr->length == 0) return;
+
+    Array copy = subArray(*pArr, 0, steps - 1);
+    display(copy);
+    leftShift(pArr, steps);
+
+    for(int i = pArr->length - steps, j = 0; j < steps; i++, j++) {
+        pArr->A[i] = copy.A[j];
+    }
+
+    free(copy.A);
+    copy.A = NULL;
+    copy.length = 0;
+    copy.size = 0;
+}
+
 void rightShift(Array * pArr, int steps);
 void rightRotation(Array * pArr, int steps);
