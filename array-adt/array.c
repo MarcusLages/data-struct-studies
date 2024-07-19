@@ -231,6 +231,7 @@ void reverseSub(Array * pArr) {
 }
 
 void leftShift(Array * pArr, int steps) {
+    if(steps <= 0) return;
     for(int i = 0; i < pArr->length; i++) {
         if(i + steps >= pArr->length) {
             pArr->A[i] = 0;
