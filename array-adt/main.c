@@ -82,9 +82,12 @@ int main (int argc, char *argv[]) {
 
     printf("Array sorted? %d\n", isSorted(arr));
 
-    // reverseCopy(&arr);
-    reverseSub(&arr);
+    sortedInsert(&arr, 7);
     display(arr);
+
+    // reverseCopy(&arr);
+    // reverseSub(&arr);
+    // display(arr);
 
     // leftShift(&arr, 3);
     // display(arr);
@@ -95,7 +98,7 @@ int main (int argc, char *argv[]) {
     // leftRotation(&arr, 5);
     // display(arr);
 
-    printf("Array sorted? %d\n", isSorted(arr));
+    // printf("Array sorted? %d\n", isSorted(arr));
 
     return 0;
 }

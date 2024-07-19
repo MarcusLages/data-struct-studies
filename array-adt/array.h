@@ -16,6 +16,7 @@ int get(Array arr, int index);
 void set(Array * pArr, int index, int num);
 void add(Array * pArr, int num);
 void insert(Array * pArr, int index, int num);
+void sortedInsert(Array * pArr, int num);
 int delete(Array * pArr, int index);
 double avg(Array arr);
 int max(Array arr);

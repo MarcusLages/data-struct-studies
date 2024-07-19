@@ -67,6 +67,26 @@ void insert(Array * pArr, int index, int num) {
     pArr->length++;
 }
 
+void sortedInsert(Array * pArr, int num) {
+    if (!isSorted(*pArr)) {
+        printf("This array is not sorted.\n");
+        return;
+    }
+
+    if (pArr->length == pArr->size)
+        increaseSize(pArr, 2);
+    
+    int i = pArr->length - 1;
+    
+    while(pArr->A[i] > num) {
+        pArr->A[i + 1] = pArr->A[i];
+        i--;
+    }
+
+    pArr->A[i + 1] = num;
+    pArr->length++;
+}
+
 int delete(Array * pArr, int index) {
     if (index >= pArr->length || index < 0) {
         fprintf(stderr, "------------\n| ERROR: This index is not valid.\n------------\n", 52);
