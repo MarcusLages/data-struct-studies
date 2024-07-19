@@ -3,6 +3,14 @@
 #include <math.h>
 #include "array.h"
 
+static void swap(int * i, int * j) {
+    if (*i != *j) {
+        int temp = *i;
+        *i = *j;
+        *j = temp;
+    }
+}
+
 void display(Array arr) {
     printf("----------\nSize = %d\nLength = %d\n", arr.size, arr.length);
     for(int i = 0; i < arr.length; i++)
@@ -187,12 +195,10 @@ void reverseCopy(Array * pArr) {
 // Reverses the array through array substitution
 // O(log[2]n)
 void reverseSub(Array * pArr) {
-    int i, j, temp;
+    int i, j;
 
     for(i = 0, j = pArr->length - 1; i < j; i++, j--) {
-        temp = pArr->A[i];
-        pArr->A[i] = pArr->A[j];
-        pArr->A[j] = temp;
+        swap(&pArr->A[i], &pArr->A[j]);
     }
 }
 
