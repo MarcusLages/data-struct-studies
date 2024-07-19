@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <math.h>
 #include "array.h"
 
@@ -105,6 +106,13 @@ int max(Array arr) {
 void increaseSize(Array * pArr, int increase) {
     pArr->size += increase;
     pArr->A = realloc(pArr->A, pArr->size * sizeof(int));
+}
+
+bool isSorted(Array arr) {
+    for(int i = 0; i < arr.length; i++)
+        if(arr.A[i] > arr.A[i + 1])
+            return false;
+    return true;
 }
 
 // Only for one element

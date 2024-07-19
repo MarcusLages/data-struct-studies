@@ -1,6 +1,8 @@
 #ifndef ARRAY_C_
 #define ARRAY_C_
 
+#include <stdbool.h>
+
 typedef struct Array Array;
 
 struct Array {
@@ -18,6 +20,7 @@ int delete(Array * pArr, int index);
 double avg(Array arr);
 int max(Array arr);
 void increaseSize(Array * pArr, int increase);
+bool isSorted(Array arr);
 int linearSearch(Array arr, int num);
 int transposedLinearSearch(Array * pArr, int num);
 int headLinearSearch(Array * pArr, int num);
