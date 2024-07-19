@@ -12,6 +12,11 @@ static void swap(int * i, int * j) {
 }
 
 void display(Array arr) {
+    if (arr.length == 0) {
+        printf("Array is empty.\n");
+        return;
+    }
+
     printf("----------\nSize = %d\nLength = %d\n", arr.size, arr.length);
     for(int i = 0; i < arr.length; i++)
         printf("%d ", arr.A[i]);
