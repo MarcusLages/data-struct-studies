@@ -296,5 +296,22 @@ Array subArray(Array arr, int start, int finish) {
     return subArr;
 }
 
+void copy(Array * pDestArr, Array srcArr) {
+    if (pDestArr != NULL) {
+        free(pDestArr->A);
+        pDestArr->A = NULL;
+    }
+
+    pDestArr->length = srcArr.length;
+    pDestArr->size = srcArr.size;
+    pDestArr->A = (int *) malloc(srcArr.size * sizeof(int));
+    mempcpy(pDestArr->A, srcArr.A, srcArr.size * sizeof(int));
+}
+
+bool compare(Array arr1, Array arr2);
+void append(Array * pUpdatedArr, Array appendArr);
+Array concat(Array pUpdatedArr, Array appendArr);
+Array merge(Array pUpdatedArr, Array appendArr);
+
 void rightShift(Array * pArr, int steps);
 void rightRotation(Array * pArr, int steps);

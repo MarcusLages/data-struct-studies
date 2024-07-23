@@ -92,13 +92,20 @@ int main (int argc, char *argv[]) {
     // leftShift(&arr, 3);
     // display(arr);
 
-    Array sub = subArray(arr, 2, 4);
-    display(sub);
+    // Array sub = subArray(arr, 2, 4);
+    // display(sub);
 
     // leftRotation(&arr, 5);
     // display(arr);
 
     // printf("Array sorted? %d\n", isSorted(arr));
+
+    Array copiedArray;
+    copy(&copiedArray, arr);
+    printf("Original array:\n");
+    display(arr);
+    printf("Copied array:\n");
+    display(copiedArray);
 
     return 0;
 }
