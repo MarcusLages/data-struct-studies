@@ -48,5 +48,10 @@ int recursiveBinarySearch(Array arr, int low, int high, int num);
 
 // Binary or subarray operations
 Array subArray(Array arr, int start, int finish);
+void copy(Array * pArr, Array copiedArray);
+bool compare(Array arr1, Array arr2);
+void append(Array * pUpdatedArr, Array appendArr);
+Array concat(Array pUpdatedArr, Array appendArr);
+Array merge(Array pUpdatedArr, Array appendArr);
 
 #endif //ARRAY_C_
