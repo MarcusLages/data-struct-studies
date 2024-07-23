@@ -102,10 +102,15 @@ int main (int argc, char *argv[]) {
 
     Array copiedArray;
     copy(&copiedArray, arr);
-    printf("Original array:\n");
-    display(arr);
-    printf("Copied array:\n");
-    display(copiedArray);
+    // printf("Original array:\n");
+    // display(arr);
+    // printf("Copied array:\n");
+    // display(copiedArray);
+
+    printf("Are both arrays equals? %s\n", (compare(arr, copiedArray)) ? "yes" : "no");
+
+    add(&copiedArray, 10);
+    printf("Are both arrays equals? %s\n", (compare(arr, copiedArray)) ? "yes" : "no");
 
     return 0;
 }

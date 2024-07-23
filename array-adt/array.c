@@ -308,7 +308,17 @@ void copy(Array * pDestArr, Array srcArr) {
     mempcpy(pDestArr->A, srcArr.A, srcArr.size * sizeof(int));
 }
 
-bool compare(Array arr1, Array arr2);
+bool compare(Array arr1, Array arr2) {
+    if (arr1.length != arr2.length)
+        return false;
+
+    for(int i = 0; i < arr1.length; i++)
+        if (arr1.A[i] != arr2.A[i])
+            return false;
+    
+    return true;
+}
+
 void append(Array * pUpdatedArr, Array appendArr);
 Array concat(Array pUpdatedArr, Array appendArr);
 Array merge(Array pUpdatedArr, Array appendArr);
