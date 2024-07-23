@@ -80,10 +80,10 @@ int main (int argc, char *argv[]) {
     // printf("The average of the items in the array is: %.2lf", avg(arr));
     // printf("The max of the items in the array is: %d", max(arr));
 
-    printf("Array sorted? %d\n", isSorted(arr));
+    // printf("Array sorted? %d\n", isSorted(arr));
 
-    sortedInsert(&arr, 7);
-    display(arr);
+    // sortedInsert(&arr, 7);
+    // display(arr);
 
     // reverseCopy(&arr);
     // reverseSub(&arr);
@@ -92,8 +92,8 @@ int main (int argc, char *argv[]) {
     // leftShift(&arr, 3);
     // display(arr);
 
-    // Array sub = subArray(arr, 2, 40);
-    // display(sub);
+    Array sub = subArray(arr, 2, 4);
+    display(sub);
 
     // leftRotation(&arr, 5);
     // display(arr);

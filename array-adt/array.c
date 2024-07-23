@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include <math.h>
 #include "array.h"
 
@@ -281,11 +282,16 @@ Array subArray(Array arr, int start, int finish) {
     Array subArr;
     subArr.length = finish - start + 1;
     subArr.size = subArr.length;
+    
+    // Using memcpy
+    // ! To use memcpy you still need to initialize the array in the heap
     subArr.A = (int *) malloc(subArr.size * sizeof(int));
+    memcpy(subArr.A, arr.A + start, subArr.size * sizeof(int));
 
-    for(int i = start, sub = 0; i <= finish; i++, sub++) {
-        subArr.A[sub] = arr.A[i];
-    }
+    // Not using memcpy
+    // for(int i = start, sub = 0; i <= finish; i++, sub++) {
+    //     subArr.A[sub] = arr.A[i];
+    // }
 
     return subArr;
 }
